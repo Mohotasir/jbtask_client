@@ -11,7 +11,7 @@ export default function Nav() {
 
       <div className="hidden md:flex relative justify-between items-center my-3">
         <div className="">
-          <h1 className="text-xl font-bold p-2 border">logo</h1>
+          <h1 className="text-2xl font-bold p-2 font-sans  ">MYSHOP</h1>
           
         </div>
         <SearchBar></SearchBar>
@@ -35,8 +35,7 @@ export default function Nav() {
 
       {/* mobile menu */}
       <div className=" flex flex-col  my-3 md:hidden">
-    <div className="flex justify-between">
-        <h1 className="text-xl font-bold p-2 border">logo</h1>
+    <div className="flex justify-between"><h1 className="text-xl font-bold p-2 ">MYSHOP</h1>
         <SearchBar></SearchBar>
         <div onClick={handleVisible} className="">
             <h1 className="text-xl font-bold cursor-pointer">|||</h1>

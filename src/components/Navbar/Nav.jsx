@@ -1,18 +1,20 @@
 import { useState } from "react";
-
+import SearchBar from "../SearchBar/SearchBar";
 export default function Nav() {
     const [visible ,setVisible] = useState(false)
     const handleVisible = ()=>{
         setVisible(!visible)
     }
   return (
-    <div className="my-8">
+    <div className="py-3 md:py-4 mx-auto bg-white">
       {/* desktop menu */}
 
-      <div className="hidden md:flex relative justify-between items-center mx-3 md:mx-12 my-3">
-        <div>
+      <div className="hidden md:flex relative justify-between items-center my-3">
+        <div className="">
           <h1 className="text-xl font-bold p-2 border">logo</h1>
+          
         </div>
+        <SearchBar></SearchBar>
         <div className="flex justify-between text-gray-600 items-center gap-4 lg:gap-12">
           <div className="flex list-none gap-8 text-sm">
             <li>Home</li>
@@ -32,9 +34,10 @@ export default function Nav() {
       </div>
 
       {/* mobile menu */}
-      <div className=" flex flex-col mx-4 md:mx-12 my-3 md:hidden">
+      <div className=" flex flex-col  my-3 md:hidden">
     <div className="flex justify-between">
         <h1 className="text-xl font-bold p-2 border">logo</h1>
+        <SearchBar></SearchBar>
         <div onClick={handleVisible} className="">
             <h1 className="text-xl font-bold cursor-pointer">|||</h1>
         </div>

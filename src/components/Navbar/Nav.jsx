@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import SearchBar from "../SearchBar/SearchBar";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 export default function Nav() {
   const [visible, setVisible] = useState(false);
@@ -13,7 +13,31 @@ export default function Nav() {
       .then()
       .catch((error) => alert(error.message));
   };
+  const navList = (
+    <>
+      <li>
+        <NavLink
+          to="/"
+          style={({ isActive }) => {
+            return {
+              color: isActive && "#5ce65c",
+            };
+          }}
+        >
+          Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          
+        >
+          Products
+        </NavLink>
+      </li>
 
+      {user?.email ? <></> : <></>}
+    </>
+  );
   return (
     <div className="py-3 md:py-4 mx-auto bg-white">
       {/* desktop menu */}
@@ -25,10 +49,7 @@ export default function Nav() {
         <SearchBar></SearchBar>
         <div className="flex justify-between text-gray-600 items-center gap-4 lg:gap-12">
           <div className="flex list-none gap-8 text-sm">
-            <li>Home</li>
-            <li>Products</li>
-            <li>FAQ</li>
-            <li>Contact</li>
+            {navList}
           </div>
           {user ? (
             <div className="flex justify-center items-center gap-2">
@@ -80,13 +101,11 @@ export default function Nav() {
             X
           </div>
           <div className="flex justify-center items-center flex-col list-none gap-4">
-            <li className="border-b-2 pb-3 w-full text-center">Home</li>
-            <li className="border-b-2 pb-3 w-full text-center">Products</li>
-            <li className="border-b-2 pb-3 w-full text-center">FAQ</li>
-            <li className="border-b-2 pb-3 w-full text-center">Contact</li>
+            {navList}
           </div>
+          <div >
           {user ? (
-            <div className="flex justify-center items-center gap-2">
+            <div className="flex justify-center  flex-col px-3 mt-4 items-center gap-2">
               <img className="w-[40px] rounded-full" src={user.photoURL} alt="" />
               <Link
                 onClick={handleSignOut}
@@ -96,7 +115,7 @@ export default function Nav() {
               </Link>
             </div>
           ) : (
-            <div className="flex gap-3">
+            <div className="flex gap-3 flex-col px-3 mt-4">
               <Link
                 to="/login"
                 className="border rounded-md px-4 py-2 btnClr text-white"
@@ -111,6 +130,7 @@ export default function Nav() {
               </Link>
             </div>
           )}
+          </div>
           
         </div>
       </div>

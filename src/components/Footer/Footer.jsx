@@ -2,7 +2,7 @@
 
 export default function Footer() {
   return (
-    <div className="flex justify-between mt-12 py-12 bg-green-50 pr-12 pl-6">
+    <div className="flex flex-col md:flex-row gap-3 justify-between mt-12 py-12 bg-green-50 pr-12 pl-6">
        <div>
             <h1 className="text-4xl font-bold ">MYSHOP</h1>
             <p className="text-gray-400 text-lg">choose your desire

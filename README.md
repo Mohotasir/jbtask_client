@@ -1,7 +1,5 @@
-# Product Filtering and Sorting SPA - Client Side
-
 ## Project Name
-Product Filtering and Sorting SPA
+MYSHOP
 
 ## Live Website Link
 https://jbtask-fe9ba.web.app/
